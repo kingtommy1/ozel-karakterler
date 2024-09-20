@@ -56,7 +56,7 @@
     <script>
         function copyText(character) {
             navigator.clipboard.writeText(character).then(() => {
-                alert(character + " kopyalandı!");
+                alert(character + " Kopyalama işlemi başarılı!");
             }).catch(err => {
                 console.error('Kopyalama başarısız oldu!', err);
             });
