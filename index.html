@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Karakterler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .character {
+            font-size: 30px;
+            padding: 15px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .character:hover {
+            background-color: #e0e0e0;
+            border-color: #000;
+        }
+        /* Mobil cihazlar için uyumluluk */
+        @media only screen and (max-width: 600px) {
+            .character {
+                font-size: 24px;
+                padding: 10px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Özel Karakterler</h1>
+    <div class="character" onclick="copyText('☺')">☺</div>
+    <div class="character" onclick="copyText('★')">★</div>
+    <div class="character" onclick="copyText('✿')">✿</div>
+    <div class="character" onclick="copyText('∞')">∞</div>
+    <div class="character" onclick="copyText('♡')">♡</div>
+    <div class="character" onclick="copyText('♬')">♬</div>
+    <div class="character" onclick="copyText('⚽')">⚽</div>
+    <div class="character" onclick="copyText('☕')">☕</div>
+    <div class="character" onclick="copyText('🚀')">🚀</div>
+
+    <script>
+        function copyText(character) {
+            navigator.clipboard.writeText(character).then(() => {
+                alert(character + " kopyalandı!");
+            }).catch(err => {
+                console.error('Kopyalama başarısız oldu!', err);
+            });
+        }
+    </script>
+</body>
+</html>
