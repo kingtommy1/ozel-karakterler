@@ -1,57 +1,142 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özel Karakterler</title>
+    <title>Şekilli Semboller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-color: #f9f9f9;
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        h1 {
+        .header {
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .title {
+            color: #007bff;
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Rubik Bubbles', cursive;
+        }
+        .description {
+            background-color: #454545;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .symbols-section {
+            background-color: #454545;
+            padding: 30px 0;
+            margin-top: 20px;
+        }
+        .symbols-title {
+            color: white;
+            font-size: 24px;
+            text-align: center;
             margin-bottom: 20px;
+        }
+        .character-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .character {
             font-size: 30px;
-            padding: 15px;
-            margin: 10px;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
             border: 2px solid #ccc;
             border-radius: 8px;
-            display: inline-block;
             cursor: pointer;
             transition: 0.3s;
         }
         .character:hover {
             background-color: #e0e0e0;
-            border-color: #000;
+            border-color: #007bff;
         }
-        /* Mobil cihazlar için uyumluluk */
+        .footer {
+            background-color: #2c2f33;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+        .social-link {
+            display: inline-block;
+            background-color: #7289da;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .social-link:hover {
+            background-color: #5865f2;
+        }
         @media only screen and (max-width: 600px) {
             .character {
-                font-size: 24px;
-                padding: 10px;
+                font-size: 25px;
+                width: 50px;
+                height: 50px;
             }
-            body {
-                padding: 10px;
+            .title {
+                font-size: 28px;
+            }
+            .description {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Özel Karakterler</h1>
-    <div class="character" onclick="copyText('☺')">☺</div>
-    <div class="character" onclick="copyText('★')">★</div>
-    <div class="character" onclick="copyText('✿')">✿</div>
-    <div class="character" onclick="copyText('∞')">∞</div>
-    <div class="character" onclick="copyText('♡')">♡</div>
-    <div class="character" onclick="copyText('♬')">♬</div>
-    <div class="character" onclick="copyText('⚽')">⚽</div>
-    <div class="character" onclick="copyText('☕')">☕</div>
-    <div class="character" onclick="copyText('🚀')">🚀</div>
+    <div class="header">
+        <h1 class="title">Şekilli Semboller</h1>
+    </div>
+    
+    <div class="description">
+        <p>Aşağıda bu web sitemize sizin için Çeşitli Şekilli Semboller ekledik. Günlük hayatınızda kullanabileceğiniz hemen hemen her türlü sembolü bu sitede bulabilirsiniz. Bunları arkadaşlarınızla, ailenizle veya diğer kullanıcılarla paylaşabilirsiniz.</p>
+        <p>Herhangi bir sembolü kopyalamak için üzerine tıklayıp kopyalayabilirsiniz.</p>
+    </div>
+    
+    <div class="symbols-section">
+        <h2 class="symbols-title">Semboller</h2>
+        <div class="character-container">
+            <div class="character" onclick="copyText('☺')">☺</div>
+            <div class="character" onclick="copyText('★')">★</div>
+            <div class="character" onclick="copyText('✿')">✿</div>
+            <div class="character" onclick="copyText('∞')">∞</div>
+            <div class="character" onclick="copyText('♡')">♡</div>
+            <div class="character" onclick="copyText('♬')">♬</div>
+            <div class="character" onclick="copyText('⚽')">⚽</div>
+            <div class="character" onclick="copyText('☕')">☕</div>
+            <div class="character" onclick="copyText('🚀')">🚀</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Beni sosyal medyada takip edin:</p>
+        <a href="https://discord.gg/JagzC8QKkM" target="_blank" class="social-link">Discord Sunucumuza Katılın</a>
+    </footer>
 
     <script>
         function copyText(character) {
